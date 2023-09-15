@@ -135,7 +135,6 @@ p {
 }
 
 header {
-    position: absolute;
     width: 100%;
     padding: 20px 0;
 }
@@ -438,15 +437,81 @@ form button {
     width: 30%;
 }
 
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    padding: 0 15px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    width: min-content;
+    font-weight: 600;
+}
+
+
+.main-nav li::after {
+    bottom: -10px;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgb(44, 82, 196);
+    transition: width 0.3s;
+}
+
+.main-nav li:hover::after {
+    width: 100%;
+}
+
+.lang {
+    position: relative;
+    cursor: pointer;
+}
+
+.lang ul {
+    position: absolute;
+    left: -100%;
+    top: 101%;
+    display: none;
+
+    flex-direction: column;
+    background-color: #4BA1A7;
+    color: white;
+    padding: 5px 0;
+    border-radius: 7px;
+    gap: 10px;
+}
+
+.lang ul li:hover {
+    background-color: white;
+    width: 100%;
+    color: #4BA1A7;
+}
+.lang ul li::after{
+    content: none;
+}
+
+.lang:hover ul {
+    display: flex;
+}
+
+#nav-icon1 {
+    display: none;
+}
+
 .side-nav {
-    position: fixed;
+    display: none;
     right: 0;
     top: 0;
     width: 0;
+    height: 0;
+    position: absolute;
     visibility: hidden;
     opacity: 0;
     background-color: #F4F4F0;
-    height: 100vh;
     z-index: 2000;
     padding: 50px 25px;
     transition: all 0.3s;
@@ -467,7 +532,7 @@ form button {
 }
 
 .side-nav li::after {
-    top: 100%;
+    bottom: -10px;
     left: 0;
     content: '';
     position: absolute;
@@ -527,6 +592,7 @@ footer {
 header {
     position: fixed;
     left: 0;
+    background-color: white !important;
     top: 0;
     z-index: 2001;
     padding: 5px 0;
@@ -561,7 +627,14 @@ header {
         flex-direction: column;
     }
 } */
-
+@media screen and (max-width:768px){
+    .main-nav{
+        display: none;
+    }
+    #nav-icon1{
+        display: block;
+    }
+}
 @media screen and (max-width:752px) {
     .cards {
         flex-direction: column;

@@ -14,15 +14,19 @@ window.addEventListener('scroll', () => {
 })
 
 hamburger.addEventListener('click', () => {
+    navBar.style.display = 'block'
     navBar.style.width = '255px'
+    navBar.style.height = '100vh'
     navBar.style.opacity = '1'
     navBar.style.visibility = 'visible'
     hamburger.classList.toggle('open')
 })
 
 quit.addEventListener('click', () => {
+    navBar.style.display = 'none'
     navBar.style.width = '0'
     navBar.style.opacity = '0'
+    navBar.style.height = '0'
     navBar.style.visibility = 'hidden'
     hamburger.classList.toggle('open')
 
@@ -34,7 +38,6 @@ function scrollId(element) {
     navBar.style.opacity = '0'
     navBar.style.visibility = 'hidden'
     hamburger.classList.toggle('open')
-
 }
 
 const swiperEl = document.querySelector('swiper-container')
@@ -64,4 +67,4 @@ swiperEl.initialize();
 
 // git remote add origin https://github.com/Miyirbek2003/dbc.git
 // git branch -M main
-//  
+// git push -u origin main
